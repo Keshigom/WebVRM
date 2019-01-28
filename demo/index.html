@@ -60,7 +60,7 @@
 	</style>
 </head>
 
-<body>
+<body onload="VAUTA.init(document.getElementById('threeCanvas'))">
 
 	<div id="threeCanvas" style="z-index: 2;position: absolute;"></div>
 	<canvas class='jeefacetransferCanvas' id='jeefacetransferCanvas'></canvas>
@@ -81,6 +81,10 @@
 	<script src="../lib/WebGL.js"></script>
 	<script src="../lib/stats.min.js"></script>
 
+	<script src="../src/Skeleton.js"></script>
+	<script src="../src/BlendShape.js"></script>
+	<script src="../src/WebVRM.js"></script>
+	<script src="../src/vauta.js"></script>
 </body>
 
 
