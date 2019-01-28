@@ -14,6 +14,10 @@ class WebVRM {
         this._loadVRM(avatarFileURL, targetScene);
     }
 
+    //=======================================================
+    //  private method
+    //=======================================================
+
     _loadVRM(avatarFileURL, targetScene) {
         // model
         const loader = new THREE.VRMLoader();
@@ -69,8 +73,13 @@ class WebVRM {
 
     _initAvatar(vrm) {
         this._skeleton = new Skeleton(vrm.scene, vrm.parser.json);
+        this._blendShape = new BlendShape(vrm.scene, vrm.parser.json);
     }
 
+
+    //=======================================================
+    //  public method
+    //=======================================================
 
     getScene() {
         if (this._vrm === undefined) {
