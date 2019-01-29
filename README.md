@@ -14,6 +14,10 @@ three.js及びVRMLoder,GLTFLoderを使用しています。
 
 # デモ
 
+モデルデータを読み込むので表示に時間がかかるかもしれません。
+[DEMO](https://keshigom.github.io/WebVRM/docs/)
+
+
 # 参考
 - [VRM](https://dwango.github.io/vrm/)
 - [three.js](https://github.com/mrdoob/three.js/blob/dev/examples/js/loaders/VRMLoader.js)
