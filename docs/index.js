@@ -4,7 +4,8 @@ init = (targetCanvas) => {
     initStats();
     //TODO:消す
     addTestObject();
-    loadModel(`../asset/MonoPub.vrm`);
+    //loadModel(`../asset/MonoPub.vrm`);
+    loadModel(`https://dl.dropboxusercontent.com/s/tnpy4wpnk90ezz2/6539860143134222801.vrm`)
     //描画開始
     update();
 }
