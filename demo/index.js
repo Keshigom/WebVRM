@@ -64,6 +64,7 @@ const addTestObject = () => {
     const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
     const cubeMaterial = new THREE.MeshNormalMaterial();
     const threeCube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+    threeCube.position.set(0, -0.5, 0);
     scene.add(threeCube);
 }
 
