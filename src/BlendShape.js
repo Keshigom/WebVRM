@@ -82,4 +82,8 @@ class BlendShape {
         });
     }
 
+    //MapIteratorを返す
+    getKeysIterator() {
+        return this._blendShapeMap.keys();
+    }
 };

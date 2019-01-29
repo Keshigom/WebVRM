@@ -49,4 +49,9 @@ class Skeleton {
     getBoneName(key) {
         return this._boneMap.get(key).bone.name;
     }
+
+    //MapIteratorを返す
+    getKeysIterator() {
+        return this._boneMap.keys();
+    }
 }

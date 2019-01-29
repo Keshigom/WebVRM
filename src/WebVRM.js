@@ -6,19 +6,26 @@ VRMLoder.js
 */
 
 class WebVRM {
-    constructor(avatarFileURL, targetScene) {
+
+    constructor(
+        avatarFileURL,
+        targetScene,
+        callBackReady = () => {
+            console.log("Avatar Ready")
+        }
+    ) {
         this._vrm;
         this._skeleton;
         this._blendShape;
         this.isReady = false;
-        this._loadVRM(avatarFileURL, targetScene);
+        this._loadVRM(avatarFileURL, targetScene, callBackReady);
     }
 
     //=======================================================
     //  private method
     //=======================================================
 
-    _loadVRM(avatarFileURL, targetScene) {
+    _loadVRM(avatarFileURL, targetScene, callBackReady) {
         // model
         const loader = new THREE.VRMLoader();
         let loadModel;
@@ -68,6 +75,7 @@ class WebVRM {
             targetScene.add(vrm.scene);
             this._initAvatar(vrm);
             this.isReady = true;
+            callBackReady();
         });
     }
 
@@ -86,5 +94,19 @@ class WebVRM {
             console.log("Loading is incomplete");
         }
         return this._vrm.scene;
+    }
+
+    setBoneRotation(key, angle) {
+        this._skeleton.setRotation(key, angle);
+    }
+    setExpression(key, value) {
+        this._blendShape.setExpression(key, value);
+    }
+
+    getBoneKeys() {
+        return this._skeleton.getKeysIterator();
+    }
+    getExpressionKeys() {
+        return this._blendShape.getKeysIterator();
     }
 }
